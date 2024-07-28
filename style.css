@@ -1,0 +1,121 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+
+:root { 
+    --background-color: #333;
+    --color: #fefefe;
+    --font: "Lato";
+    --border: #ccc;
+    --img-size: 125px;
+    --transition-long: 500ms;
+}
+
+img {
+    width: var(--img-size);
+    height: var(--img-size);
+}
+
+* {
+    font-family: var(--font), sans-serif;
+    font-weight: 700;
+}
+
+body {
+    height: 100vh;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--background-color);
+}
+
+header {
+    margin: 0px 60px;
+    text-align: center;
+}
+
+#currentTime {
+    font-weight: 700;
+    font-size: 150px;
+    margin-top: var(--img-size);
+    color: var(--color);
+    text-align: center;
+}
+
+main {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 0;
+    background-color: var(--background-color);
+}
+
+.container {
+    position: fixed;
+    bottom: 20px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+input[type="text"] {
+    padding: 20px 30px;
+    border: 2px solid var(--border);
+    border-radius: 5px;
+    width: 400px;
+    text-align: center;
+    background-color: #333a;
+    outline: none;
+    color: var(--color);
+    transition: var(--transition-long);
+}
+
+input[type="text"]:focus {
+    border-radius: 30px;
+    box-shadow: rgba(0, 0, 0, 0.5) 0 10px 20px;
+}
+
+.searchBox {
+    display: flex;
+    max-width: 450px;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    border-radius: 50px;
+    position: relative;
+    background-color: transparent;
+}
+
+.searchButton {
+    color: var(--border);
+    position: absolute;
+    right: 8px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: var(--background-color); /* Changed from gradient to solid color */
+    border: 0;
+    display: inline-block;
+    transition: all 300ms cubic-bezier(.23, 1, 0.32, 1);
+}
+
+button:hover {
+    color: var(--border);
+    box-shadow: rgba(0, 0, 0, 0.5) 0 10px 20px;
+    transform: translateY(-2px);
+}
+
+button:active {
+    box-shadow: none;
+    transform: translateY(0);
+}
+
+.searchInput {
+    border: none;
+    background: none;
+    outline: none;
+    color: var(--border);
+    font-size: 15px;
+    padding: 24px 46px 24px 26px;
+}
