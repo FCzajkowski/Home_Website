@@ -14,9 +14,12 @@ function performSearch() {
         window.location.href = url;
     }
 }
+document.getElementById('searchInput').addEventListener('keypress', function(event) {
+    if (event.key === 'Enter') {
+        performSearch();
+    }
+});
 
-// Update the time every second
 setInterval(updateTime, 1000);
 
-// Initialize the time when the page loads
 updateTime();
