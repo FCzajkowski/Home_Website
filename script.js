@@ -9,6 +9,7 @@ function updateTimeAndDate() {
 
 setInterval(updateTimeAndDate, 1000);
 updateTimeAndDate(); // Initial call to set the time and date immediately
+
 document.addEventListener('DOMContentLoaded', function() {
     const cards = document.querySelectorAll('.card');
 
@@ -39,13 +40,20 @@ document.addEventListener("DOMContentLoaded", () => {
     const searchButton = document.querySelector('.button--submit');
     const searchInput = document.querySelector('#search');
 
-    searchButton.addEventListener('click', () => {
+    const performSearch = () => {
         const query = searchInput.value.trim();
         if (query) {
-            // Construct the Google search URL
-            const googleSearchURL = `https://www.google.com/search?q=${encodeURIComponent(query)}`;
-            // Redirect to the Google search results page
-            window.location.href = googleSearchURL;
+            // Construct the DuckDuckGo search URL
+            const searchURL = `https://duckduckgo.com/?q=${encodeURIComponent(query)}`;
+            // Redirect to the DuckDuckGo search results page
+            window.location.href = searchURL;
+        }
+    };
+
+    searchButton.addEventListener('click', performSearch);
+    searchInput.addEventListener('keypress', (event) => {
+        if (event.key === 'Enter') {
+            performSearch();
         }
     });
 });
